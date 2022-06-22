@@ -1,0 +1,33 @@
+.parts-nav {
+  &__link {
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 13px;
+      height: 13px;
+      background: $atlantis;
+    }
+
+    &--user {
+      &::before {
+        background: url('../images/svg/user.svg') no-repeat;
+      }
+    }
+    &--compare {
+      &::before {
+        background: url('../images/svg/compare.svg') no-repeat;
+      }
+    }
+    &--basket {
+      &::before {
+        background: url('../images/svg/cart.svg') no-repeat;
+      }
+    }
+  }
+}

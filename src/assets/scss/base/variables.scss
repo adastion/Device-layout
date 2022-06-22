@@ -1,0 +1,41 @@
+// Colors
+// Color names - http://chir.ag/projects/name-that-color/
+
+$black: #000000;
+$slate_gray: rgba(#000000, 0.5);
+$white: #ffffff;
+$science_blue: #0077e2;
+
+$marzipan: #f7e296;
+$tundora: #464646;
+$saffron: #f0c52e;
+$supernova: #ffc600;
+$mercury: #e5e5e5;
+$alto: #dcdcdc;
+$gallery: #eeeeee;
+$atlantis: #91c92f;
+$mine_shaft: #363636;
+
+// Body
+$base-text-color: $black;
+$secondary-text-color: $black;
+
+// Headings
+$base-headings-color: $white;
+
+// Links
+$base-link-color: $black;
+$hover-link-color: $black;
+
+// Buttons
+$base-btn-text-color: $white;
+$base-btn-background-color: $science_blue;
+$hover-btn-text-color: $white;
+$hover-btn-background-color: $science_blue;
+
+// Forms
+$field-text-color: $black;
+$field-placeholder-color: $slate_gray;
+// $field-border-color-focus: $sepia;
+$field-border-color: $black;
+$field-background-color: transparent;
