@@ -3,6 +3,10 @@
     position: relative;
     padding-left: 20px;
 
+    @include tablet-and-bigger {
+      padding-left: 25px;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -19,15 +23,21 @@
         background: url('../images/svg/user.svg') no-repeat;
       }
     }
+
     &--compare {
       &::before {
         background: url('../images/svg/compare.svg') no-repeat;
       }
     }
+
     &--basket {
       &::before {
         background: url('../images/svg/cart.svg') no-repeat;
       }
+    }
+
+    &--color {
+      color: $white;
     }
   }
 }

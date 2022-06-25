@@ -3,8 +3,16 @@
   margin-top: 40px;
   padding: 15px;
 
+  @include big-tablet-and-bigger {
+    padding: 40px 60px;
+  }
+
   &__logo {
     margin-top: -32px;
+
+    @include big-tablet-and-bigger {
+      margin-top: -57px;
+    }
   }
 
   &__navigation {
@@ -13,7 +21,16 @@
     align-items: center;
     gap: 10px 20px;
     margin-bottom: 20px;
-    // gap: 10px 35px;
+
+    @include phone-and-bigger {
+      gap: 10px 40px;
+    }
+
+    @include desktop-and-bigger {
+      & li:nth-child(2) {
+        flex-grow: 1;
+      }
+    }
 
     @include secondary-copy-font;
     font-size: 15px;
@@ -25,8 +42,12 @@
   }
 
   &__search {
-    width: 130%;
+    width: 100%;
     position: relative;
+
+    @include tablet-and-bigger {
+      width: 47%;
+    }
 
     & input,
     & button {
@@ -35,7 +56,7 @@
 
     & input {
       width: 70%;
-      // padding: 0 15px 0 36px;
+      padding-right: 15px;
       padding-left: 36px;
 
       &:hover,
@@ -91,37 +112,47 @@
     transition: visibility 0.3s;
   }
 
-  &__login {
-    // flex-grow: 1;
-  }
-
-  &__link {
-    
-
-  }
-
   &__menu {
     font-size: 18px;
     font-weight: 800;
     letter-spacing: 4px;
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 10px 25px;
 
-    // display: flex;
-    // flex-wrap: wrap;
-    // gap: 10px 40px;
+    @include tablet-and-bigger {
+      & li:nth-child(3) {
+        flex-grow: 1;
 
-    & li:nth-child(3) {
-      // flex-grow: 1;
+        @include desktop-and-less {
+          flex-grow: 0;
+        }
+      }
+    }
+
+    @include big-tablet-and-bigger {
+      flex-direction: row;
+    }
+
+    @include small-desktop-and-bigger {
+      gap: 15px 35px;
     }
   }
 
   &__catalog {
-    // width: 46.2%;
+    width: auto;
+
+    @include tablet-and-bigger {
+      width: 47.5%;
+    }
   }
 
   &__btn-catalog {
     position: relative;
     text-transform: uppercase;
+    letter-spacing: 4px;
+    cursor: pointer;
 
     &::after {
       content: '';
@@ -133,17 +164,49 @@
       height: 16px;
       background: url('../images/svg/plus.svg');
     }
+
+    &:focus ~ .header__submenu {
+      display: flex;
+    }
   }
 
   &__submenu {
     @include secondary-copy-font;
     font-size: 15px;
     font-weight: 300;
+    text-transform: lowercase;
+    letter-spacing: normal;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    gap: 10px;
+
+    @include phone-and-bigger {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0 30px;
+      gap: 0 30px;
+    }
+
+    @include big-tablet-and-bigger {
+      gap: 20px 77px;
+      width: 130%;
+      margin-top: 40px;
+    }
+  }
+
+  &__subitem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include big-tablet-and-bigger {
+      gap: 20px;
+    }
   }
 
   &__link-submenu {
-  }
-
-  &__link-services {
+    display: block;
   }
 }

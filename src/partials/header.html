@@ -9,18 +9,20 @@
   <nav>
     <ul class="header__navigation">
       <li class="header__search">
-        <input class="input" type="search" placeholder="Поиск по сайту">
-        <button class="btn header__btn-search">Найти</button>
-        <span class="header__line-focus"></span>
-      </li>
-      <li class="header__login">
-        <a href="#" class="btn parts-nav__link parts-nav__link--user header__link">Войти</a>
-      </li>
-      <li>
-        <a href="#" class="btn parts-nav__link parts-nav__link--compare header__link">Сравнить</a>
+        <form action="/" method="post" class="header__form">
+          <input class="input" type="search" placeholder="Поиск по сайту">
+          <button class="btn header__btn-search">Найти</button>
+          <span class="header__line-focus"></span>
+        </form>
       </li>
       <li>
-        <a href="#" class="btn parts-nav__link parts-nav__link--basket header__link">Корзина</a>
+        <a href="#" class="btn parts-nav__link parts-nav__link--user ">Войти</a>
+      </li>
+      <li>
+        <a href="#" class="btn parts-nav__link parts-nav__link--compare ">Сравнить</a>
+      </li>
+      <li>
+        <a href="#" class="btn parts-nav__link parts-nav__link--basket ">Корзина</a>
       </li>
     </ul>
   </nav>
@@ -28,16 +30,22 @@
     <li class="header__catalog">
       <button class="btn header__btn-catalog">Каталог товаров</button>
       <ul class="header__submenu">
-        <li><a href="#" class="header__link-submenu">Виртуальная реальность</a></li>
-        <li><a href="#" class="header__link-submenu">Моноподы для селфи</a></li>
-        <li><a href="#" class="header__link-submenu">Экшн-камеры</a></li>
-        <li><a href="#" class="header__link-submenu">Фитнес-браслеты</a></li>
-        <li><a href="#" class="header__link-submenu">Умные часы</a></li>
-        <li><a href="#" class="header__link-submenu">Квадрокоптеры</a></li>
+        <li class="header__subitem">
+          <a href="#" class="btn header__link-submenu">Виртуальная реальность</a>
+          <a href="#" class="btn header__link-submenu">Моноподы для селфи</a>
+          <a href="#" class="btn header__link-submenu">Экшн-камеры</a>
+        </li>
+        <li class="header__subitem">
+          <a href="#" class="btn header__link-submenu">Фитнес-браслеты</a>
+          <a href="#" class="btn header__link-submenu">Умные часы</a>
+        </li>
+        <li class="header__subitem">
+          <a href="#" class="btn header__link-submenu">Квадрокоптеры</a>
+        </li>
       </ul>
     </li>
-    <li><a href="#" class="btn header__link-services">Доставка</a></li>
-    <li><a href="#" class="btn header__link-services">Гарантия</a></li>
-    <li><a href="#" class="btn header__link-services">Контакты</a></li>
+    <li><a href="#" class="btn">Доставка</a></li>
+    <li><a href="#" class="btn">Гарантия</a></li>
+    <li><a href="#" class="btn">Контакты</a></li>
   </ul>
 </div>

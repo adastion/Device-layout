@@ -13,10 +13,6 @@ main {
   margin: 0 auto;
 }
 
-footer {
-  background: $tundora;
-}
-
 p {
   @include secondary-copy-font;
   font-size: 15px;
