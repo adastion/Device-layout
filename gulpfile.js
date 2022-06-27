@@ -15,6 +15,7 @@ const del = require("del");
 const notify = require("gulp-notify");
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
+const svgSprite = require('gulp-svg-sprite');
 const browserSync = require("browser-sync").create();
 
 
@@ -190,6 +191,51 @@ function images(cb) {
     cb();
 }
 
+function svgsprite() {
+  let config = {
+    shape: {
+      dimension: {
+        maxWidth: 500,
+        maxHeight: 500,
+      },
+      spacing: {
+        padding: 0,
+      },
+      transform: [
+        {
+          svgo: {
+            plugins: [
+              { removeViewBox: false },
+              { removeUnusedNS: false },
+              { removeUselessStrokeAndFill: true },
+              { cleanupIDs: false },
+              { removeComments: true },
+              { removeEmptyAttrs: true },
+              { removeEmptyText: true },
+              { collapseGroups: true },
+              { removeAttrs: { attrs: '(fill|stroke|style)' } },
+            ],
+          },
+        },
+      ],
+    },
+    mode: {
+      symbol: {
+          sprite: 'sprite.svg',
+      },
+    },
+  };
+
+  return gulp
+    .src('src/assets/images/svg/*.svg')
+    .pipe(svgSprite(config))
+    .on('error', function (error) {
+      console.log(error);
+    })
+    .pipe(gulp.dest(path.build.images));
+}
+
+
 function fonts(cb) {
     return src(path.src.fonts)
         .pipe(dest(path.build.fonts))
@@ -212,7 +258,7 @@ function watchFiles() {
     gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, svgsprite, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
@@ -222,6 +268,7 @@ exports.html = html;
 exports.css = css;
 exports.js = js;
 exports.images = images;
+exports.svgsprite = svgsprite;
 exports.fonts = fonts;
 exports.clean = clean;
 exports.build = build;
