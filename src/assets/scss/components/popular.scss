@@ -1,0 +1,57 @@
+.popular {
+  padding: 15px 0;
+  @include tablet-and-bigger {
+    padding: 80px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px;
+
+    @include tablet-and-bigger {
+      gap: 35px 40px;
+    }
+  }
+
+  &__item {
+    max-width: 160px;
+  }
+
+  &__link {
+    &:hover .popular__wrap {
+      background: $saffron;
+      transition: all 0.3s;
+    }
+
+    &:active ~ .popular__name,
+    &:active > .popular__wrap .popular__icon {
+      opacity: 0.3;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 160px;
+    background: $marzipan;
+    z-index: 100;
+  }
+
+  &__icon {
+    fill: $mine_shaft;
+  }
+
+  &__name {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 24px;
+
+    @include tablet-and-bigger {
+      margin-top: 40px;
+    }
+  }
+}

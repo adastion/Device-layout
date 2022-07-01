@@ -35,14 +35,14 @@ const path = {
         html:   srcPath + "*.html",
         js:     srcPath + "assets/js/*.js",
         css:    srcPath + "assets/scss/*.scss",
-        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "assets/images/**/*.{jpg,png,gif,ico,webp,webmanifest,xml,json}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     watch: {
         html:   srcPath + "**/*.html",
         js:     srcPath + "assets/js/**/*.js",
         css:    srcPath + "assets/scss/**/*.scss",
-        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "assets/images/**/*.{jpg,png,gif,ico,webp,webmanifest,xml,json}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     clean: "./" + distPath
@@ -194,11 +194,7 @@ function images(cb) {
 function svgsprite() {
   let config = {
     shape: {
-      dimension: {
-        maxWidth: 500,
-        maxHeight: 500,
-      },
-      spacing: {
+        spacing: {
         padding: 0,
       },
       transform: [
@@ -212,7 +208,7 @@ function svgsprite() {
               { removeComments: true },
               { removeEmptyAttrs: true },
               { removeEmptyText: true },
-              { collapseGroups: true },
+              { collapseGroups: false },
               { removeAttrs: { attrs: '(fill|stroke|style)' } },
             ],
           },

@@ -1,3 +1,123 @@
 .footer {
-  background: $tundora;
+  padding: 40px 15px;
+  margin: 0 auto;
+
+  @include big-tablet-and-bigger {
+    padding: 40px 60px;
+  }
+
+  @include big-desktop-and-bigger {
+    padding: 60px 0;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px 20px;
+    
+    
+    &:not(:last-child) {
+      margin-bottom: 20px;
+      
+      @include tablet-and-bigger {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include tablet-and-bigger {
+      flex-direction: row;
+      align-items: center;
+
+      &:nth-child(2) {
+        margin-bottom: 55px;
+        flex-wrap: wrap;
+      }
+    }
+    
+    &:last-child {
+      flex-direction: row;
+    }
+
+    & a,
+    & p {
+      color: $white;
+    }
+  }
+
+  &__logo {
+  }
+
+  &__navigation {
+    @include phone-and-bigger {
+      gap: 10px 40px;
+    }
+  }
+
+  &__svg-icon {
+  }
+
+  &__adress {
+  }
+
+  &__tel {
+    order: 3;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    gap: 10px 40px;
+
+    @include tablet-and-bigger {
+      flex-direction: row;
+      order: 2;
+    }
+  }
+
+  &__line {
+    width: 80px;
+    height: 7px;
+    background: $supernova;
+    display: none;
+
+    @include phone-and-bigger {
+      display: block;
+    }
+  }
+
+  &__socil {
+    display: flex;
+    gap: 23px;
+  }
+
+  &__link {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.1;
+    }
+  }
+
+  &__social-icon {
+    fill: $white;
+  }
+
+  &__icon-htmlacademy {
+    height: 35px;
+    width: 27px;
+    fill: $supernova;
+  }
 }

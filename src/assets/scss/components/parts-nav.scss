@@ -1,43 +1,34 @@
 .parts-nav {
+  display: flex;
+  gap: 10px 20px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 13px;
+    height: 13px;
+    margin-right: 10px;
+    order: 1;
+    &--color {
+      fill: $supernova;
+    }
+  }
+
   &__link {
-    position: relative;
-    padding-left: 20px;
-
-    @include tablet-and-bigger {
-      padding-left: 25px;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      width: 13px;
-      height: 13px;
-      background: $atlantis;
-    }
-
-    &--user {
-      &::before {
-        background: url('../images/svg/user.svg') no-repeat;
-      }
-    }
-
-    &--compare {
-      &::before {
-        background: url('../images/svg/compare.svg') no-repeat;
-      }
-    }
-
-    &--basket {
-      &::before {
-        background: url('../images/svg/cart.svg') no-repeat;
-      }
-    }
-
+    order: 2;
     &--color {
       color: $white;
+    }
+
+    &:hover ~ .parts-nav__icon {
+      opacity: 0.5;
+    }
+
+    &:active ~ .parts-nav__icon {
+      opacity: 0.3;
     }
   }
 }

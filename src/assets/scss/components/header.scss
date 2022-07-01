@@ -35,10 +35,6 @@
     @include secondary-copy-font;
     font-size: 15px;
     font-weight: 300;
-
-    & svg {
-      margin-right: 10px;
-    }
   }
 
   &__search {
@@ -80,9 +76,16 @@
       left: 0;
       width: 16px;
       height: 16px;
-      background: url('../images/svg/search.svg');
     }
   }
+
+   &__search-icon {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
   &__btn-search {
     padding: 0 20px;
@@ -141,33 +144,37 @@
   }
 
   &__catalog {
+    position: relative;
     width: auto;
-
+    
     @include tablet-and-bigger {
       width: 47.5%;
     }
   }
-
+  
   &__btn-catalog {
-    position: relative;
     text-transform: uppercase;
     letter-spacing: 4px;
     cursor: pointer;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 46%;
-      right: -32px;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      background: url('../images/svg/plus.svg');
-    }
-
+    display: flex;
+    align-items: center;
+    
     &:focus ~ .header__submenu {
       display: flex;
     }
+    
+    &:hover  .header__icon-plus {
+      transform: rotate(90deg);
+      transition: transform 0.3s;
+    }
+  }
+  
+  &__icon-plus {
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    margin-left: 15px;
+    transition: transform 0.3s;    
   }
 
   &__submenu {
