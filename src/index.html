@@ -4,21 +4,21 @@ title: Home
 ---
 
 <div class="slider">
-  <input class="visually-hidde slider__input" type="radio" name="s" id="sl_1" checked>
-  <input class="visually-hidde slider__input" type="radio" name="s" id="sl_2">
-  <input class="visually-hidde slider__input" type="radio" name="s" id="sl_3">
-  <div class="slider__slide">
+  <input class="visually-hidden slider__input" type="radio" name="s" id="sl_1" checked>
+  <input class="visually-hidden slider__input" type="radio" name="s" id="sl_2">
+  <input class="visually-hidden slider__input" type="radio" name="s" id="sl_3">
+  <div id="slide_1" class="slider__slide">
     <div class="slider__block">
       <div class="slider__img-wrap">
         <img src="assets/images/slider-1.png" alt="pic">
       </div>
     </div>
-    <div class="slider__block">
+    <div class="slider__block slider__block--info">
       <p class="slider__slogan">Делай селфи, как Бен Стиллер!</p>
-      <p class="slider__description">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!)
-        метров длиной и весом всего 5 килограмм.</p>
+      <p class="slider__description">Самая длинная палка для селфи доступна в нашем магазине.</p>
+      <p class="slider__description">Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
       <div class="slider__nav-wrap">
-        <button>Подробнее</button>
+        <a href="#" class="btn-line">Подробнее</a>
         <ul class="slider__list-nav">
           <li>
             <label for="sl_1" class="slider__btn-radio"></label>
@@ -47,6 +47,74 @@ title: Home
       </ul>
     </div>
   </div>
+  <div id="slide_2" class="slider__slide">
+    <div class="slider__block">
+      <div class="slider__img-wrap">
+        <img src="assets/images/slider-2.png" alt="pic">
+      </div>
+    </div>
+    <div class="slider__block slider__block--info">
+      <p class="slider__slogan">Худеем правильно!</p>
+      <p class="slider__description">Мотивирующие фитнес-браслеты помогут найти в себе силы</p>
+      <p class="slider__description">не пропускать занятия и соблюдать диету.</p>
+      <div class="slider__nav-wrap">
+        <a href="#" class="btn-line">Подробнее</a>
+        <ul class="slider__list-nav">
+          <li>
+            <label for="sl_1" class="slider__btn-radio"></label>
+          </li>
+          <li>
+            <label for="sl_2" class="slider__btn-radio"></label>
+          </li>
+          <li>
+            <label for="sl_3" class="slider__btn-radio"></label>
+          </li>
+        </ul>
+      </div>
+      <ul class="slider__list-specifications">
+        <li>
+          <p class="slider__meaning">48 часов</p>
+          <p class="slider__quality">Без подзарядки</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="slide_3" class="slider__slide">
+    <div class="slider__block">
+      <div class="slider__img-wrap">
+        <img src="assets/images/slider-3.png" alt="pic">
+      </div>
+    </div>
+    <div class="slider__block slider__block--info">
+      <p class="slider__slogan">Этот обычный, на первый взгляд, квадрокоптер оснащен</p>
+      <p class="slider__description">мощным лазером, замаскированным под стандартную камеру.</p>
+      <p class="slider__description">Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+      <div class="slider__nav-wrap">
+        <a href="#" class="btn-line">Подробнее</a>
+        <ul class="slider__list-nav">
+          <li>
+            <label for="sl_1" class="slider__btn-radio"></label>
+          </li>
+          <li>
+            <label for="sl_2" class="slider__btn-radio"></label>
+          </li>
+          <li>
+            <label for="sl_3" class="slider__btn-radio"></label>
+          </li>
+        </ul>
+      </div>
+      <ul class="slider__list-specifications">
+        <li>
+          <p class="slider__meaning">800 м</p>
+          <p class="slider__quality">Дальность полета</p>
+        </li>
+        <li>
+          <p class="slider__meaning">50 м</p>
+          <p class="slider__quality">Радиус поражения</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 <section class="popular">
   <h1 class="visually-hidden">Популярныйе товары</h1>
@@ -55,7 +123,7 @@ title: Home
       <a href="#" class="popular__link">
         <div class="popular__wrap">
           <svg class="popular__icon" width="97" height="55">
-            <use xlink:href="assets/images/symbol/sprite.svg#popular-1"></use>
+            <use xlink:href="assets/images/sprite.svg#popular-1"></use>
           </svg>
         </div>
       </a>
@@ -65,7 +133,7 @@ title: Home
       <a href="#" class="popular__link">
         <div class="popular__wrap">
           <svg class="popular__icon" width="86" height="117">
-            <use xlink:href="assets/images/symbol/sprite.svg#popular-2"></use>
+            <use xlink:href="assets/images/sprite.svg#popular-2"></use>
           </svg>
         </div>
       </a>
@@ -75,7 +143,7 @@ title: Home
       <a href="#" class="popular__link">
         <div class="popular__wrap">
           <svg class="popular__icon" width="71" height="87">
-            <use xlink:href="assets/images/symbol/sprite.svg#popular-3"></use>
+            <use xlink:href="assets/images/sprite.svg#popular-3"></use>
           </svg>
         </div>
       </a>
@@ -85,7 +153,7 @@ title: Home
       <a href="#" class="popular__link">
         <div class="popular__wrap">
           <svg class="popular__icon" width="107" height="65">
-            <use xlink:href="assets/images/symbol/sprite.svg#popular-4"></use>
+            <use xlink:href="assets/images/sprite.svg#popular-4"></use>
           </svg>
         </div>
       </a>
@@ -95,7 +163,7 @@ title: Home
       <a href="#" class="popular__link">
         <div class="popular__wrap">
           <svg class="popular__icon" width="56" height="98">
-            <use xlink:href="assets/images/symbol/sprite.svg#popular-5"></use>
+            <use xlink:href="assets/images/sprite.svg#popular-5"></use>
           </svg>
         </div>
       </a>
@@ -105,7 +173,7 @@ title: Home
       <a href="#" class="popular__link">
         <div class="popular__wrap">
           <svg class="popular__icon" width="132" height="69">
-            <use xlink:href="assets/images/symbol/sprite.svg#popular-6"></use>
+            <use xlink:href="assets/images/sprite.svg#popular-6"></use>
           </svg>
         </div>
       </a>

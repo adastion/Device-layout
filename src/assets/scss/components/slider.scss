@@ -1,38 +1,120 @@
 .slider {
+  &__input {
+  }
 
-		&__input {
-		}
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+		display: none;
 
-		&__slide {
-		}
+    @include tablet-and-bigger {
+      flex-direction: row;
+    }
 
-		&__block {
+		@include small-desktop-and-bigger {
+			padding: 0 60px;
 		}
+  }
 
-		&__img-wrap {
-		}
+  &__block {
+    @include tablet-and-bigger {
+      width: 50%;
+    }
 
-		&__slogan {
-		}
+    &--info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 120%;
+    }
+  }
 
-		&__description {
-		}
+  &__img-wrap {
+  }
 
-		&__nav-wrap {
-		}
+  &__slogan {
+    @include primary-copy-font;
+    font-size: 47px;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 56px;
+    text-align: center;
+  }
 
-		&__list-nav {
-		}
+  &__description {
+    line-height: normal;
+    margin-bottom: 15px;
+  }
 
-		&__btn-radio {
-		}
+  &__nav-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px 0;
+    margin-bottom: 40px;
 
-		&__list-specifications {
-		}
+    @include phone-and-bigger {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 
-		&__meaning {
-		}
+  &__list-nav {
+    display: flex;
+    gap: 20px;
+  }
 
-		&__quality {
-		}
+  &__btn-radio {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $black;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      border: 1px solid $black;
+      border-radius: 50%;
+      display: none;
+    }
+  }
+
+  &__list-specifications {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 50px;
+  }
+
+  &__meaning {
+    @include primary-copy-font;
+    font-size: 36px;
+    font-weight: 300;
+  }
+
+  &__quality {
+    font-size: 13px;
+  }
+}
+
+#sl_1:checked ~ #slide_1,
+#sl_2:checked ~ #slide_2,
+#sl_3:checked ~ #slide_3 {
+	display: flex;
+}
+
+#sl_1:checked ~ .slider__slide label[for='sl_1']::before,
+#sl_2:checked ~ .slider__slide label[for='sl_2']::before,
+#sl_3:checked ~ .slider__slide label[for='sl_3']::before {
+  display: block;
 }

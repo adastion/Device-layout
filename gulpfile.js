@@ -16,6 +16,9 @@ const notify = require("gulp-notify");
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
 const browserSync = require("browser-sync").create();
 
 
@@ -35,14 +38,14 @@ const path = {
         html:   srcPath + "*.html",
         js:     srcPath + "assets/js/*.js",
         css:    srcPath + "assets/scss/*.scss",
-        images: srcPath + "assets/images/**/*.{jpg,png,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "assets/images/**/*.{jpg,png,gif,ico,webp,webmanifest,svg,xml,json}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     watch: {
         html:   srcPath + "**/*.html",
         js:     srcPath + "assets/js/**/*.js",
         css:    srcPath + "assets/scss/**/*.scss",
-        images: srcPath + "assets/images/**/*.{jpg,png,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "assets/images/**/*.{jpg,png,gif,ico,webp,webmanifest,svg,xml,json}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     clean: "./" + distPath
@@ -154,6 +157,7 @@ function js(cb) {
             filename: 'app.js',
           }
         }))
+        .pipe(uglify())
         .pipe(dest(path.build.js))
         .pipe(browserSync.reload({stream: true}));
 
@@ -191,47 +195,6 @@ function images(cb) {
     cb();
 }
 
-function svgsprite() {
-  let config = {
-    shape: {
-        spacing: {
-        padding: 0,
-      },
-      transform: [
-        {
-          svgo: {
-            plugins: [
-              { removeViewBox: false },
-              { removeUnusedNS: false },
-              { removeUselessStrokeAndFill: true },
-              { cleanupIDs: false },
-              { removeComments: true },
-              { removeEmptyAttrs: true },
-              { removeEmptyText: true },
-              { collapseGroups: false },
-              { removeAttrs: { attrs: '(fill|stroke|style)' } },
-            ],
-          },
-        },
-      ],
-    },
-    mode: {
-      symbol: {
-          sprite: 'sprite.svg',
-      },
-    },
-  };
-
-  return gulp
-    .src('src/assets/images/svg/*.svg')
-    .pipe(svgSprite(config))
-    .on('error', function (error) {
-      console.log(error);
-    })
-    .pipe(gulp.dest(path.build.images));
-}
-
-
 function fonts(cb) {
     return src(path.src.fonts)
         .pipe(dest(path.build.fonts))
@@ -246,6 +209,42 @@ function clean(cb) {
     cb();
 }
 
+
+function svgSpriteBuild() {
+  return (
+    gulp
+      .src(srcPath + 'assets/images/svg/*.svg')
+      .pipe(
+        svgmin({
+          js2svg: {
+            pretty: true,
+          },
+        }),
+      )
+      .pipe(
+        cheerio({
+          run: function ($) {
+            $('[fill]').removeAttr('fill');
+            $('[stroke]').removeAttr('stroke');
+            $('[style]').removeAttr('style');
+          },
+          parserOptions: { xmlMode: true },
+        }),
+      )
+      .pipe(replace('&gt;', '>'))
+      .pipe(
+        svgSprite({
+          mode: {
+            symbol: {
+              sprite: '../sprite.svg',
+            },
+          },
+        }),
+      )
+      .pipe(gulp.dest(distPath + 'assets/images'))
+  );
+};
+
 function watchFiles() {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.css], cssWatch);
@@ -254,7 +253,7 @@ function watchFiles() {
     gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, svgsprite, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts, svgSpriteBuild));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
@@ -264,9 +263,9 @@ exports.html = html;
 exports.css = css;
 exports.js = js;
 exports.images = images;
-exports.svgsprite = svgsprite;
 exports.fonts = fonts;
 exports.clean = clean;
+exports.svgSpriteBuild = svgSpriteBuild;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
