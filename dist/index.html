@@ -1,8 +1,83 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="ru">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/images/svg/favicon.svg">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Home</title></head>
+
+<body>
+    <div class="container">
+        <header><div class="all-content header">
+  <div class="header__logo">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg">
+      <use xlink:href="assets/images/sprite.svg#logo"></use>
+    </svg>
+  </div>
+  <nav>
+    <ul class="parts-nav header__navigation">
+      <li class="header__search">
+        <form action="/" method="post" class="header__form">
+          <svg class="header__search-icon">
+            <use xlink:href="assets/images/sprite.svg#search"></use>
+          </svg>
+          <input class="input" type="search" placeholder="Поиск по сайту">
+          <button class="btn header__btn-search">Найти</button>
+          <span class="header__line-focus"></span>
+        </form>
+      </li>
+      <li class="parts-nav__item">
+        <a href="#" class="btn parts-nav__link">Войти</a>
+        <svg class="parts-nav__icon header__svg-icon">
+          <use xlink:href="assets/images/sprite.svg#user"></use>
+        </svg>
+      </li>
+      <li class="parts-nav__item">
+        <a href="#" class="btn parts-nav__link">Сравнить</a>
+        <svg class="parts-nav__icon header__svg-icon">
+          <use xlink:href="assets/images/sprite.svg#compare"></use>
+        </svg>
+      </li>
+      <li class="parts-nav__item">
+        <a href="#" class="btn parts-nav__link">Корзина</a>
+        <svg class="parts-nav__icon header__svg-icon">
+          <use xlink:href="assets/images/sprite.svg#cart"></use>
+        </svg>
+      </li>
+    </ul>
+  </nav>
+  <ul class="header__menu">
+    <li class="header__catalog">
+      <button class="btn header__btn-catalog">Каталог товаров
+        <svg class="header__icon-plus">
+          <use xlink:href="assets/images/sprite.svg#plus"></use>
+        </svg>
+      </button>
+      <ul class="header__submenu">
+        <li class="header__subitem">
+          <a href="#" class="btn header__link-submenu">Виртуальная реальность</a>
+          <a href="#" class="btn header__link-submenu">Моноподы для селфи</a>
+          <a href="#" class="btn header__link-submenu">Экшн-камеры</a>
+        </li>
+        <li class="header__subitem">
+          <a href="#" class="btn header__link-submenu">Фитнес-браслеты</a>
+          <a href="#" class="btn header__link-submenu">Умные часы</a>
+        </li>
+        <li class="header__subitem">
+          <a href="#" class="btn header__link-submenu">Квадрокоптеры</a>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#" class="btn">Доставка</a></li>
+    <li><a href="#" class="btn">Гарантия</a></li>
+    <li><a href="#" class="btn">Контакты</a></li>
+  </ul>
+</div></header>
+        <main>
 <div class="slider">
   <input class="visually-hidden slider__input" type="radio" name="s" id="sl_1" checked>
   <input class="visually-hidden slider__input" type="radio" name="s" id="sl_2">
@@ -298,3 +373,80 @@ title: Home
     <button class="btn-line about__btn">Напишите нам</button>
   </div>
 </section>
+</main>
+        <footer><div class="all-content footer">
+  <div class="footer__block">
+    <div class="footer__logo">
+      <a href="#" class="logo__link">
+        <svg class="logo logo--footer">
+          <use xlink:href="assets/images/sprite.svg#logo"></use>
+        </svg>
+      </a>
+    </div>
+    <ul class="parts-nav footer__navigation">
+      <li class="parts-nav__item">
+        <a href="#" class="btn parts-nav__link  parts-nav__link--color">Войти</a>
+        <svg class="parts-nav__icon parts-nav__icon--color footer__svg-icon">
+          <use xlink:href="assets/images/sprite.svg#user"></use>
+        </svg>
+      </li>
+      <li class="parts-nav__item">
+        <a href="#" class="btn parts-nav__link parts-nav__link--color">Сравнить</a>
+        <svg class="parts-nav__icon parts-nav__icon--color footer__svg-icon">
+          <use xlink:href="assets/images/sprite.svg#compare"></use>
+        </svg>
+      </li>
+      <li class="parts-nav__item">
+        <a href="#" class="btn parts-nav__link parts-nav__link--color">Корзина</a>
+        <svg class="parts-nav__icon parts-nav__icon--color footer__svg-icon">
+          <use xlink:href="assets/images/sprite.svg#cart"></use>
+        </svg>
+      </li>
+    </ul>
+  </div>
+  <div class="footer__block">
+    <p class="footer__adress">г. Москва, ул. Строителей, 15</p>
+    <p class="footer__tel">Тел.: <a href="tel: +74954959595" class="btn">+7 (495) 495-95-95</a></p>
+    <ul class="footer__list">
+      <li><a href="#" class="btn">Доставка</a></li>
+      <li><a href="#" class="btn">Гарантия</a></li>
+      <li><a href="#" class="btn">Контакты</a></li>
+    </ul>
+  </div>
+  <div class="footer__block">
+    <div class="footer__line"></div>
+    <ul class="footer__socil">
+      <li>
+        <a href="#" class="footer__link">
+          <svg class="footer__social-icon">
+            <use xlink:href="assets/images/sprite.svg#fb"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="footer__link">
+          <svg class="footer__social-icon">
+            <use xlink:href="assets/images/sprite.svg#vk"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="footer__link">
+          <svg class="footer__social-icon">
+            <use xlink:href="assets/images/sprite.svg#twitter"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <a href="http://htmlacademy.ru" class="btn">
+      <svg class="footer__icon-htmlacademy">
+        <use xlink:href="assets/images/sprite.svg#logo-html"></use>
+      </svg>
+    </a>
+  </div>
+</div></footer>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

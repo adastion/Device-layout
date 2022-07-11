@@ -25,9 +25,9 @@
   font-weight: 800;
   letter-spacing: 4px;
   position: relative;
-  max-width: 220px;
-  width: 100%;
-  
+  padding: 0 20px;
+  cursor: pointer;
+
   &::before {
     content: '';
     position: absolute;
@@ -36,7 +36,7 @@
     background: $saffron;
     z-index: -1;
   }
-  
+
   &:hover::before {
     height: 40px;
   }

@@ -146,9 +146,14 @@
   &__catalog {
     position: relative;
     width: auto;
+    order: 4;
     
     @include tablet-and-bigger {
       width: 47.5%;
+    }
+
+    @include big-tablet-and-bigger {
+      order: 0;
     }
   }
   
@@ -160,7 +165,8 @@
     align-items: center;
     
     &:focus ~ .header__submenu {
-      display: flex;
+      // display: flex;
+      visibility: visible;
     }
     
     &:hover  .header__icon-plus {
@@ -186,7 +192,8 @@
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    display: none;
+    // display: none;
+    visibility: hidden;
     gap: 10px;
 
     @include phone-and-bigger {

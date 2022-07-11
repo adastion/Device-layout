@@ -1,59 +1,124 @@
 .slider {
-  &__input {
+  position: relative;
+
+  @include big-tablet-and-bigger {
+    margin-top: -94px;
   }
 
   &__slide {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
     padding: 15px;
-		display: none;
+    display: none;
+    position: relative;
 
-    @include tablet-and-bigger {
-      flex-direction: row;
+    @include phone-and-bigger {
+      padding: 0 30px;
     }
 
-		@include small-desktop-and-bigger {
-			padding: 0 60px;
-		}
+    @include big-tablet-and-bigger {
+      flex-direction: row;
+      gap: 0;
+    }
+
+    @include small-desktop-and-bigger {
+      padding: 0 60px;
+    }
+  }
+
+  &__number {
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 122px;
+    color: $white;
+    display: none;
+
+    @include big-tablet-and-bigger {
+      display: flex;
+      font-size: 170px;
+      position: absolute;
+      top: 0;
+      right: 60px;
+    }
   }
 
   &__block {
-    @include tablet-and-bigger {
+    z-index: 20;
+    @include big-tablet-and-bigger {
       width: 50%;
     }
 
     &--info {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: 120%;
+
+      @include big-tablet-and-bigger {
+        align-self: flex-end;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 27px;
+          width: 100px;
+          height: 7px;
+          background: $white;
+        }
+      }
+
     }
   }
 
   &__img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include big-tablet-and-bigger {
+      padding-right: 60px;
+      height: 486px;
+    }
+
+    & img {
+      object-fit: contain;
+    }
   }
 
   &__slogan {
     @include primary-copy-font;
-    font-size: 47px;
     font-size: 2rem;
     font-weight: 800;
-    line-height: 56px;
+    line-height: 37px;
     text-align: center;
+    margin-bottom: 30px;
+    height: 120px;
+
+    @include tablet-and-bigger {
+      line-height: 56px;
+      font-size: 37px;
+      text-align: start;
+    }
+
+    @include desktop-and-bigger {
+      font-size: 47px;
+    }
+  }
+
+  &__description-wrap {
   }
 
   &__description {
-    line-height: normal;
-    margin-bottom: 15px;
+    line-height: 30px;
   }
 
   &__nav-wrap {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 25px 0;
-    margin-bottom: 40px;
+    height: 125px;
 
     @include phone-and-bigger {
       flex-direction: row;
@@ -68,8 +133,8 @@
 
   &__btn-radio {
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     border: 1px solid $black;
     border-radius: 50%;
     cursor: pointer;
@@ -93,7 +158,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0 50px;
+    gap: 10px 40px;
+
+    @include big-tablet-and-bigger {
+      justify-content: flex-start;
+    }
   }
 
   &__meaning {
@@ -110,7 +179,7 @@
 #sl_1:checked ~ #slide_1,
 #sl_2:checked ~ #slide_2,
 #sl_3:checked ~ #slide_3 {
-	display: flex;
+  display: flex;
 }
 
 #sl_1:checked ~ .slider__slide label[for='sl_1']::before,

@@ -1,0 +1,88 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 15px;
+  gap: 60px 40px;
+
+  @include tablet-and-bigger {
+    flex-direction: row;
+  }
+
+  &__block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include tablet-and-bigger {
+      align-items: baseline;
+      margin-bottom: 0;
+      width: 50%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 80px;
+      height: 7px;
+      background: $black;
+    }
+  }
+
+  &__title {
+    margin: 50px 0;
+    font-size: 47px;
+    font-weight: 800;
+  }
+
+  &__text-wrap {
+    margin-bottom: 60px;
+
+    &--width {
+      @include tablet-and-bigger {
+        max-width: 460px;
+      }
+    }
+  }
+
+  &__list {
+    font-weight: 800;
+
+    & li {
+      margin-left: 35px;
+      position: relative;
+      margin-bottom: 25px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -35px;
+        display: flex;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 2px solid $mercury;
+      }
+    }
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+    background: none;
+    margin-top: 70px;
+    z-index: 10;
+  }
+
+  &__mini-map {
+    display: flex;
+    width: 100%;
+    max-height: 222px;
+    aspect-ratio: 16/7;
+    background: url('../images/map-min.png');
+    cursor: pointer;
+  }
+}

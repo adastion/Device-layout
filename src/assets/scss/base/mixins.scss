@@ -41,7 +41,7 @@
 }
 
 @mixin big-tablet-and-bigger {
-  @media (min-width: 818px) {
+  @media (min-width: 825px) {
     @content;
   }
 }
