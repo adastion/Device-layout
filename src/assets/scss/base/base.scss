@@ -7,8 +7,13 @@ html {
   height: 100%;
 }
 
-header,
-main {
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+.all-content {
   max-width: 1160px;
   margin: 0 auto;
 }

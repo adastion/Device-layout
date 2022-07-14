@@ -105,8 +105,12 @@ html {
   height: 100%;
 }
 
-header,
-main {
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.all-content {
   max-width: 1160px;
   margin: 0 auto;
 }
@@ -150,15 +154,6 @@ h3 {
   height: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
-}
-
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.all-content {
-  max-width: 1160px;
 }
 
 .btn {
@@ -749,24 +744,50 @@ h3 {
 }
 
 .services {
-  background: #e5e5e5;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  height: 320px;
-  gap: 0 115px;
-}
-.services__nav-list {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  gap: 25px;
-  max-width: 280px;
+  -ms-flex-align: center;
+      align-items: center;
+  min-height: 320px;
+  gap: 50px 40px;
+  margin: 140px 0;
   position: relative;
 }
-.services__nav-list::after {
+@media (min-width: 768px) {
+  .services {
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+  .services {
+    gap: 0 115px;
+  }
+}
+@media (min-width: 1185px) {
+  .services {
+    padding: 0 140px;
+  }
+}
+.services::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 104px;
+  width: 100%;
+  min-height: 288px;
+  background: #e5e5e5;
+  z-index: -1;
+}
+.services__nav-wrap {
+  width: 280px;
+  position: relative;
+}
+.services__nav-wrap::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -777,27 +798,54 @@ h3 {
   height: 320px;
   background: #000000;
 }
+.services__nav-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  gap: 35px;
+}
 .services__item {
-  width: 280px;
-  text-align: center;
+  position: relative;
+}
+.services__item:active .services__btn {
+  color: #f7e296;
+}
+.services__item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -ms-flexbox;
+  display: flex;
+  background: #000000;
+  width: 100%;
+  height: 40px;
+  z-index: 0;
+  display: none;
 }
 .services__btn {
+  width: 160px;
   z-index: 10;
   padding: 0;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
-  text-align: center;
-}
-.services__btn::before {
-  width: 60%;
 }
 .services__slide {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  gap: 100px;
+  gap: 0 5px;
+  padding: 0 15px 15px;
+  background: #e5e5e5;
   display: none;
+}
+@media (min-width: 768px) {
+  .services__slide {
+    gap: 100px;
+    background: none;
+    padding: 0;
+  }
 }
 .services__title {
   font-size: 47px;
@@ -805,13 +853,31 @@ h3 {
 }
 .services__text {
   max-width: 450px;
-  max-height: 210px;
   line-height: 30px;
 }
 
 #delivery:checked ~ .services__slides #slideServisece_1,
 #warranty:checked ~ .services__slides #slideServisece_2,
 #credit:checked ~ .services__slides #slideServisece_3 {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#delivery:checked ~ .services__nav-wrap label[for=delivery],
+#warranty:checked ~ .services__nav-wrap label[for=warranty],
+#credit:checked ~ .services__nav-wrap label[for=credit] {
+  color: #f7e296;
+}
+
+#delivery:checked ~ .services__nav-wrap label[for=delivery]::before,
+#warranty:checked ~ .services__nav-wrap label[for=warranty]::before,
+#credit:checked ~ .services__nav-wrap label[for=credit]::before {
+  background: none;
+}
+
+#delivery:checked ~ .services__nav-wrap #nav-btn_1::after,
+#warranty:checked ~ .services__nav-wrap #nav-btn_2::after,
+#credit:checked ~ .services__nav-wrap #nav-btn_3::after {
   display: -ms-flexbox;
   display: flex;
 }
@@ -857,6 +923,11 @@ h3 {
   .about {
     -ms-flex-direction: row;
         flex-direction: row;
+  }
+}
+@media (min-width: 1185px) {
+  .about {
+    padding: 50px 0;
   }
 }
 .about__block {
@@ -932,7 +1003,7 @@ h3 {
   width: 100%;
   max-height: 222px;
   aspect-ratio: 16/7;
-  background: url("../images/map-min.png");
+  background: url("../images/map-min.png") center;
   cursor: pointer;
 }
 

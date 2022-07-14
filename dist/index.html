@@ -12,7 +12,8 @@
 
 <body>
     <div class="container">
-        <header><div class="all-content header">
+        <input id="cb" type="checkbox" class="visually-hidden">
+        <header class="all-content"><div class="all-content header">
   <div class="header__logo">
     <svg class="logo" xmlns="http://www.w3.org/2000/svg">
       <use xlink:href="assets/images/sprite.svg#logo"></use>
@@ -52,11 +53,11 @@
   </nav>
   <ul class="header__menu">
     <li class="header__catalog">
-      <button class="btn header__btn-catalog">Каталог товаров
+      <label for="cb" class="btn header__btn-catalog" tabindex="0">Каталог товаров
         <svg class="header__icon-plus">
           <use xlink:href="assets/images/sprite.svg#plus"></use>
         </svg>
-      </button>
+      </label>
       <ul class="header__submenu">
         <li class="header__subitem">
           <a href="#" class="btn header__link-submenu">Виртуальная реальность</a>
@@ -78,7 +79,7 @@
   </ul>
 </div></header>
         <main>
-<div class="slider">
+<div class="all-content slider">
   <input class="visually-hidden slider__input" type="radio" name="s" id="sl_1" checked>
   <input class="visually-hidden slider__input" type="radio" name="s" id="sl_2">
   <input class="visually-hidden slider__input" type="radio" name="s" id="sl_3">
@@ -91,7 +92,7 @@
     </div>
     <div class="slider__block slider__block--info">
       <p class="slider__slogan">Делай селфи, как Бен Стиллер!</p>
-      <div class="slider__description-wrap">
+      <div>
         <p class="slider__description">Самая длинная палка для селфи доступна в нашем магазине.</p>
         <p class="slider__description">Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
       </div>
@@ -196,7 +197,7 @@
     </div>
   </div>
 </div>
-<section class="popular">
+<section class="all-content popular">
   <h1 class="visually-hidden">Популярныйе товары</h1>
   <ul class="popular__list">
     <li class="popular__item">
@@ -267,13 +268,13 @@
   <input id="credit" class="visually-hidden" type="radio" name="services">
   <div class="services__nav-wrap">
     <ul class="services__nav-list">
-      <li class="services__item">
+      <li id="nav-btn_1" class="services__item">
         <label for="delivery" class="btn-line services__btn">Доставка</label>
       </li>
-      <li class="services__item">
+      <li id="nav-btn_2" class="services__item">
         <label for="warranty" class="btn-line services__btn">Гарантия</label>
       </li>
-      <li class="services__item">
+      <li id="nav-btn_3" class="services__item">
         <label for="credit" class="btn-line services__btn">Кредит</label>
       </li>
     </ul>
@@ -314,7 +315,7 @@
     </div>
   </div>
 </div>
-<section class="logotypes">
+<section class="all-content logotypes">
   <h2 class="visually-hidden">Наши партнёры</h2>
   <ul class="logotypes__list">
     <li>
@@ -347,7 +348,7 @@
     </li>
   </ul>
 </section>
-<section class="about">
+<section class="all-content about">
   <h2 class="visually-hidden">О нас и связь с нами</h2>
   <div class="about__block about__block--padding">
     <h4 class="about__title">О нас</h4>

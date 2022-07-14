@@ -66,7 +66,6 @@
           background: $white;
         }
       }
-
     }
   }
 
@@ -103,9 +102,6 @@
     @include desktop-and-bigger {
       font-size: 47px;
     }
-  }
-
-  &__description-wrap {
   }
 
   &__description {
