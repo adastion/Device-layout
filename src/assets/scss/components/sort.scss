@@ -1,0 +1,82 @@
+.sort {
+  display: flex;
+  flex-direction: column;
+  max-width: 972px;
+  min-height: 70px;
+  background: $mercury;
+  position: relative;
+  padding: 8px 15px;
+
+  @include tablet-and-bigger {
+    padding: 8px 140px 8px 75px;
+  }
+
+  @include big-desktop-and-bigger {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__title {
+    margin-right: 50px;
+    margin-bottom: 10px;
+
+    @include big-desktop-and-bigger {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px 30px;
+
+    @include big-desktop-and-bigger {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    @include secondary-copy-font;
+    font-size: 14px;
+
+    & label {
+      opacity: 0.4;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__arrow-up-down {
+    // margin-left: auto;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    @include big-desktop-and-bigger {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 140px;
+      position: static;
+    }
+  }
+
+  &__icon-arrow {
+    width: 11px;
+    height: 10px;
+  }
+}
+
+#byPrice:checked ~ .cotalog-content__wrap .sort .sort__list label[for='byPrice'],
+#byType:checked ~ .cotalog-content__wrap .sort .sort__list label[for='byType'],
+#byPopularity:checked ~ .cotalog-content__wrap .sort .sort__list label[for='byPopularity'] {
+  opacity: 1;
+}

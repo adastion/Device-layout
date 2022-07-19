@@ -1,0 +1,50 @@
+.heading {
+  padding: 40px 60px;
+
+  &__title {
+    font-size: 47px;
+    margin-bottom: 32px;
+  }
+
+  &__crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 38px;
+    @include secondary-copy-font;
+    font-size: 14px;
+    font-weight: 300;
+
+    & li:not(:last-child) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        right: -18px;
+        width: 4px;
+        height: 7px;
+        background: url('../images/svg/nav-arrow.svg') no-repeat;
+      }
+    }
+
+    & li:last-child a:hover,
+    & li:last-child a:active {
+      opacity: 0.6;
+      cursor: default;
+    }
+  }
+
+  &__link {
+    opacity: 0.6;
+    
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}

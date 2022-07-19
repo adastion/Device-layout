@@ -17,6 +17,8 @@
 }
 
 .btn-line {
+  border: none;
+  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +29,7 @@
   position: relative;
   padding: 0 20px;
   cursor: pointer;
+  z-index: 20;
 
   &::before {
     content: '';

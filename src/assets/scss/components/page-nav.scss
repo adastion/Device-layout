@@ -1,0 +1,55 @@
+.page-nav {
+  background: $mercury;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 760px;
+  width: 100%;
+  min-height: 70px;
+  margin: 0 auto;
+  margin-top: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  @include phone-and-bigger {
+    flex-direction: row;
+  }
+
+  &__btn {
+    height: 70px;
+    padding: 26px;
+
+    &:hover {
+      background: $alto;
+    }
+
+    &:active {
+      color: rgba($black, 0.3);
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 10px 30px;
+    margin: 8px 0;
+  }
+
+  &__link {
+    opacity: 0.3;
+
+    &--active {
+      opacity: 1;
+      cursor: default;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+}

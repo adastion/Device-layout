@@ -1,0 +1,145 @@
+---
+layouts: default
+title: Cotalog
+---
+
+<section class="all-content heading">
+  <h1 class="heading__title">Моноподы для селфи</h1>
+  <ul class="heading__crumbs">
+    <li><a href="index.html" class="heading__link">Главная</a></li>
+    <li><a href="#" class="heading__link">Каталог товаров</a></li>
+    <li><a href="#" class="heading__link">Моноподы для селфи</a></li>
+  </ul>
+</section>
+<div class="cotalog-content">
+  <input id="byPrice" class="visually-hidden" type="radio" name="sort">
+  <input id="byType" class="visually-hidden" type="radio" name="sort">
+  <input id="byPopularity" class="visually-hidden" type="radio" name="sort">
+  <aside class="filter">
+    <h2 class="filter__title">Фильтр:</h2>
+    <form action="src/" method="post" class="filter__form-wrap">
+      <div class="filter__block">
+        <h3 class="filter__subtitle">Стоимость</h3>
+        <input type="range" class="filter__slider">
+      </div>
+      <div class="filter__block">
+        <h3 class="filter__subtitle">Цвет</h3>
+        <ul class="filter__list-checkbox">
+          <li class="filter__item">
+            <input id="black" class="visually-hidden visually-hidden filter__input-checkbox" type="checkbox" checked>
+            <label for="black" class="filter__label-checkbox">Черный</label>
+          </li>
+          <li class="filter__item">
+            <input id="white" class="visually-hidden visually-hidden filter__input-checkbox" type="checkbox" disabled>
+            <label for="white" class="filter__label-checkbox">Белый</label>
+          </li>
+          <li class="filter__item">
+            <input id="blue" class="visually-hidden visually-hidden filter__input-checkbox" type="checkbox" checked
+              disabled>
+            <label for="blue" class="filter__label-checkbox">Синий</label>
+          </li>
+          <li class="filter__item">
+            <input id="red" class="visually-hidden visually-hidden filter__input-checkbox" type="checkbox" checked>
+            <label for="red" class="filter__label-checkbox">Красный</label>
+          </li>
+          <li class="filter__item">
+            <input id="pink" class="visually-hidden visually-hidden filter__input-checkbox" type="checkbox">
+            <label for="pink" class="filter__label-checkbox">Розовый</label>
+          </li>
+        </ul>
+      </div>
+      <div class="filter__block">
+        <h3 class="filter__subtitle">Bluetooth</h3>
+        <ul class="filter__list-radio">
+          <li class="filter__item">
+            <input id="true" class="visually-hidden filter__input-radio" type="radio" name="filter" checked>
+            <label for="true" class="filter__label-radio">Есть</label>
+          </li>
+          <li class="filter__item">
+            <input id="false" class="visually-hidden filter__input-radio" type="radio" name="filter">
+            <label for="false" class="filter__label-radio">Нет</label>
+          </li>
+        </ul>
+      </div>
+      <button class="btn-line filter__btn">Показать</button>
+    </form>
+  </aside>
+  <div class="cotalog-content__wrap">
+    <section class="sort">
+      <h2 class="sort__title">Сортировка:</h2>
+      <ul class="sort__list">
+        <li class="sort__item">
+          <label for="byPrice">По цене</label>
+        </li>
+        <li class="sort__item">
+          <label for="byType">По типу</label>
+        </li>
+        <li class="sort__item">
+          <label for="byPopularity">По популярности</label>
+        </li>
+        <li class="sort__item">
+          <div class="sort__arrow-up-down">
+            <svg class="sort__icon-arrow">
+              <use xlink:href="assets/images/sprite.svg#icon-up-dir"></use>
+            </svg>
+            <svg class="sort__icon-arrow">
+              <use xlink:href="assets/images/sprite.svg#icon-down-dir"></use>
+            </svg>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <div class="cotalog-content__inner">
+      <section class="products">
+        <h2 class="visually-hidden">Выбор товаров</h2>
+        <ul class="products__list">
+          <li>
+            <a href="#" class="products__card">
+              <img src="assets/images/selfie-stick-01.png" alt="selfie-stick">
+            </a>
+            <div class="products__name-price-wrap">
+              <p class="products__product-name">Любительская селфи-палка</p>
+              <p class="products__price">500 руб.</p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="products__card">
+              <img src="assets/images/pro-selfie-stick-02.png" alt="selfie-stick">
+            </a>
+            <div class="products__name-price-wrap">
+              <p class="products__product-name">Профессиональная селфи-палка</p>
+              <p class="products__price">1500 руб.</p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="products__card">
+              <img src="assets/images/unsinkable-selfie-stick-03.png" alt="selfie-stick">
+            </a>
+            <div class="products__name-price-wrap">
+              <p class="products__product-name">Непотопляемая селфи-палка</p>
+              <p class="products__price">2500 руб.</p>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="products__card">
+              <img src="assets/images/follow-selfie-stick-04.png" alt="selfie-stick">
+            </a>
+            <div class="products__name-price-wrap">
+              <p class="products__product-name">Селфи-палка «Следуй за мной»</p>
+              <p class="products__price">4900 руб.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <div class="page-nav">
+        <a href="#" class="page-nav__btn">Назад</a>
+        <ul class="page-nav__list">
+          <li><a href="#" class="page-nav__link page-nav__link--active">1</a></li>
+          <li><a href="#" class="page-nav__link">2</a></li>
+          <li><a href="#" class="page-nav__link">3</a></li>
+        </ul>
+        <a href="#" class="page-nav__btn">Вперед</a>
+      </div>
+    </div>
+  </div>
+</div>

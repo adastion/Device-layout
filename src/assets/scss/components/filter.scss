@@ -1,0 +1,124 @@
+.filter {
+  padding: 0 15px;
+  position: relative;
+  background: $mercury;
+
+  @include tablet-and-bigger {
+    max-width: 468px;
+    width: 100%;
+    // padding: 0 65px 0 100px;
+  }
+
+  @include big-tablet-and-bigger {
+    padding: 0 65px 0 200px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: $alto;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__form-wrap {
+  }
+
+  &__block {
+    border-top: 2px solid $black;
+    padding: 15px 0;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  &__list-checkbox {
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    @include secondary-copy-font;
+    font-size: 14px;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 26px;
+  }
+
+  &__label-checkbox {
+    margin-left: 42px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 27px;
+      height: 23px;
+      cursor: pointer;
+      background: url('../images/svg/checkbox-off.svg') no-repeat;
+    }
+  }
+
+  &__list-radio {
+  }
+
+  &__label-radio {
+    margin-left: 42px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      background: url('../images/svg/radio-off.svg') no-repeat;
+    }
+  }
+
+  &__input-checkbox:checked + .filter__label-checkbox::before {
+    background: url('../images/svg/checkbox-on.svg') no-repeat;
+  }
+
+  &__input-radio:checked + .filter__label-radio::before {
+    background: url('../images/svg/radio-on.svg') no-repeat;
+  }
+
+  & label:hover:before {
+    opacity: 0.6;
+  }
+
+  & label:active:before {
+    opacity: 1;
+  }
+
+  & input:disabled + label {
+    opacity: 0.3;
+  }
+
+  & input:disabled + label:hover:before {
+    opacity: 1;
+    cursor: default;
+  }
+
+  &__btn {
+    margin: 40px 0;
+  }
+}
