@@ -1,2 +1,0 @@
-//= scripts.js
-//= burger.js
