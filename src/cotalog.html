@@ -12,7 +12,7 @@ title: Cotalog
   </ul>
 </section>
 <div class="cotalog-content">
-  <input id="byPrice" class="visually-hidden" type="radio" name="sort">
+  <input id="byPrice" class="visually-hidden" type="radio" name="sort" checked>
   <input id="byType" class="visually-hidden" type="radio" name="sort">
   <input id="byPopularity" class="visually-hidden" type="radio" name="sort">
   <aside class="filter">
@@ -79,12 +79,18 @@ title: Cotalog
         </li>
         <li class="sort__item">
           <div class="sort__arrow-up-down">
-            <svg class="sort__icon-arrow">
-              <use xlink:href="assets/images/sprite.svg#icon-up-dir"></use>
-            </svg>
-            <svg class="sort__icon-arrow">
-              <use xlink:href="assets/images/sprite.svg#icon-down-dir"></use>
-            </svg>
+            <input id="up" class="visually-hidden" type="radio" name="upDown">
+            <input id="down" class="visually-hidden" type="radio" name="upDown" checked>
+            <label for="up">
+              <svg class="sort__icon-arrow">
+                <use xlink:href="assets/images/sprite.svg#icon-up-dir"></use>
+              </svg>
+            </label>
+            <label for="down">
+              <svg class="sort__icon-arrow">
+                <use xlink:href="assets/images/sprite.svg#icon-down-dir"></use>
+              </svg>
+            </label>
           </div>
         </li>
       </ul>
@@ -96,6 +102,8 @@ title: Cotalog
           <li>
             <a href="#" class="products__card">
               <img src="assets/images/selfie-stick-01.png" alt="selfie-stick">
+              <button class="btn-line products__btn">В корзину</button>
+              <button class="btn products__btn products__btn--contrast">Добавить к сравнению</button>
             </a>
             <div class="products__name-price-wrap">
               <p class="products__product-name">Любительская селфи-палка</p>
@@ -105,6 +113,8 @@ title: Cotalog
           <li>
             <a href="#" class="products__card">
               <img src="assets/images/pro-selfie-stick-02.png" alt="selfie-stick">
+              <button class="btn-line products__btn">В корзину</button>
+              <button class="btn products__btn products__btn--contrast">Добавить к сравнению</button>
             </a>
             <div class="products__name-price-wrap">
               <p class="products__product-name">Профессиональная селфи-палка</p>
@@ -114,6 +124,8 @@ title: Cotalog
           <li>
             <a href="#" class="products__card">
               <img src="assets/images/unsinkable-selfie-stick-03.png" alt="selfie-stick">
+              <button class="btn-line products__btn">В корзину</button>
+              <button class="btn products__btn products__btn--contrast">Добавить к сравнению</button>
             </a>
             <div class="products__name-price-wrap">
               <p class="products__product-name">Непотопляемая селфи-палка</p>
@@ -123,6 +135,8 @@ title: Cotalog
           <li>
             <a href="#" class="products__card">
               <img src="assets/images/follow-selfie-stick-04.png" alt="selfie-stick">
+              <button class="btn-line products__btn">В корзину</button>
+              <button class="btn products__btn products__btn--contrast">Добавить к сравнению</button>
             </a>
             <div class="products__name-price-wrap">
               <p class="products__product-name">Селфи-палка «Следуй за мной»</p>

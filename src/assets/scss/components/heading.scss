@@ -1,5 +1,9 @@
 .heading {
-  padding: 40px 60px;
+  padding: 20px 15px;
+
+  @include tablet-and-bigger {
+    padding: 40px 60px;
+  }
 
   &__title {
     font-size: 47px;
@@ -38,7 +42,7 @@
 
   &__link {
     opacity: 0.6;
-    
+
     &:hover {
       opacity: 1;
     }

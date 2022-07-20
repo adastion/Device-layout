@@ -448,7 +448,12 @@ h1 {
 }
 
 .heading {
-  padding: 40px 60px;
+  padding: 20px 15px;
+}
+@media (min-width: 768px) {
+  .heading {
+    padding: 40px 60px;
+  }
 }
 .heading__title {
   font-size: 47px;
@@ -1115,17 +1120,21 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
   gap: 5px 30px;
 }
 @media (min-width: 1160px) {
   .sort__list {
+    justify-content: space-between;
     flex-direction: row;
+    width: 100%;
   }
 }
 .sort__item {
   font-family: "OpenSans", sans-serif;
   font-size: 14px;
+}
+.sort__item:last-child {
+  margin-left: auto;
 }
 .sort__item label {
   opacity: 0.4;
@@ -1142,11 +1151,11 @@ h1 {
   top: 15px;
   right: 15px;
 }
+.sort__arrow-up-down label:not(:last-child) {
+  margin-right: 18px;
+}
 @media (min-width: 1160px) {
   .sort__arrow-up-down {
-    top: 50%;
-    transform: translateY(-50%);
-    right: 140px;
     position: static;
   }
 }
@@ -1157,7 +1166,9 @@ h1 {
 
 #byPrice:checked ~ .cotalog-content__wrap .sort .sort__list label[for=byPrice],
 #byType:checked ~ .cotalog-content__wrap .sort .sort__list label[for=byType],
-#byPopularity:checked ~ .cotalog-content__wrap .sort .sort__list label[for=byPopularity] {
+#byPopularity:checked ~ .cotalog-content__wrap .sort .sort__list label[for=byPopularity],
+#up:checked ~ label[for=up],
+#down:checked ~ label[for=down] {
   opacity: 1;
 }
 
@@ -1175,6 +1186,45 @@ h1 {
   max-width: 360px;
   aspect-ratio: 1/1.056;
   margin-bottom: 32px;
+  background: #e5e5e5;
+  position: relative;
+}
+.products__card:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e5e5e5;
+  opacity: 0.7;
+  display: none;
+}
+.products__card:hover:before {
+  display: block;
+}
+.products__card:hover .products__btn {
+  display: flex;
+}
+.products__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  display: none;
+}
+.products__btn--contrast {
+  top: 61%;
+  font-family: "OpenSans", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.products__btn--contrast:hover, .products__btn--contrast:focus {
+  opacity: 1;
+}
+.products__btn--contrast:active {
+  opacity: 0.4;
 }
 .products__name-price-wrap {
   display: flex;
