@@ -2,11 +2,12 @@
   padding: 0 15px;
   position: relative;
   background: $mercury;
+  margin-bottom: 40px;
 
   @include tablet-and-bigger {
     max-width: 468px;
     width: 100%;
-    // padding: 0 65px 0 100px;
+    margin-bottom: 0;
   }
 
   @include big-tablet-and-bigger {
@@ -32,9 +33,6 @@
     z-index: 10;
   }
 
-  &__form-wrap {
-  }
-
   &__block {
     border-top: 2px solid $black;
     padding: 15px 0;
@@ -45,7 +43,34 @@
     margin-bottom: 25px;
   }
 
-  &__list-checkbox {
+  &__range-slider {
+    width: 100%;
+  }
+
+  &__price-wrap {
+    display: flex;
+    justify-content: space-between;
+    @include primary-copy-font;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.5;
+    
+    & p {
+      display: flex;
+    }
+
+    & input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: none;
+      margin-left: 5px;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
   }
 
   &__item {
@@ -72,9 +97,6 @@
       cursor: pointer;
       background: url('../images/svg/checkbox-off.svg') no-repeat;
     }
-  }
-
-  &__list-radio {
   }
 
   &__label-radio {

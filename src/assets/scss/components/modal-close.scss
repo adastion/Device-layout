@@ -1,0 +1,20 @@
+.modal-close {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  fill: $saffron;
+  opacity: 0.5;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

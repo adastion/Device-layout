@@ -20,11 +20,15 @@ title: Cotalog
     <form action="src/" method="post" class="filter__form-wrap">
       <div class="filter__block">
         <h3 class="filter__subtitle">Стоимость</h3>
-        <input type="range" class="filter__slider">
+        <input type="range" class="filter__range-slider">
+        <div class="filter__price-wrap">
+          <input type="number" placeholder="от 0">
+          <input type="number" placeholder="до 5000">
+        </div>
       </div>
       <div class="filter__block">
         <h3 class="filter__subtitle">Цвет</h3>
-        <ul class="filter__list-checkbox">
+        <ul>
           <li class="filter__item">
             <input id="black" class="visually-hidden visually-hidden filter__input-checkbox" type="checkbox" checked>
             <label for="black" class="filter__label-checkbox">Черный</label>
@@ -50,7 +54,7 @@ title: Cotalog
       </div>
       <div class="filter__block">
         <h3 class="filter__subtitle">Bluetooth</h3>
-        <ul class="filter__list-radio">
+        <ul>
           <li class="filter__item">
             <input id="true" class="visually-hidden filter__input-radio" type="radio" name="filter" checked>
             <label for="true" class="filter__label-radio">Есть</label>

@@ -43,7 +43,6 @@
     z-index: 30;
     display: none;
 
-
     &--contrast {
       top: 61%;
       @include secondary-copy-font;
@@ -59,7 +58,6 @@
 
       &:active {
         opacity: 0.4;
-        
       }
     }
   }
@@ -81,5 +79,6 @@
   &__price {
     @include primary-copy-font;
     font-size: 16px;
+    line-height: 25px;
   }
 }
