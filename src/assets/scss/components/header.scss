@@ -187,19 +187,25 @@
     display: flex;
     flex-direction: column;
     visibility: hidden;
+    display: none;
     gap: 10px;
 
     @include phone-and-bigger {
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 0 30px;
-      gap: 0 30px;
+      gap: 10px 30px;
     }
 
     @include big-tablet-and-bigger {
       gap: 20px 77px;
       width: 130%;
       margin-top: 40px;
+    }
+
+    &--page-home {
+      @include big-tablet-and-bigger {
+        display: flex;
+      }
     }
   }
 
@@ -224,4 +230,5 @@
 
 #cb:checked ~ header .header__menu .header__submenu {
   visibility: visible;
+  display: flex;
 }

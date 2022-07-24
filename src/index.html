@@ -1,6 +1,11 @@
 ---
 layout: default
 title: Home
+headerSubmenu: header__submenu--page-home
+hiddenExit: parts-nav__link--hidden parts-nav__link--authorized
+hiddenUser: parts-nav__authorizetion
+linkHome: \#
+hiddenEfect: logo__link--hidden
 ---
 
 <div class="all-content slider">
@@ -297,8 +302,8 @@ title: Home
     <div class="about__mini-map"></div>
     <button class="btn-line about__btn">Напишите нам</button>
   </div>
-  <div class="modal-template about__modal-write">
-    <svg class="modal-close">
+  <div class="modal about__modal-write">
+    <svg class="modal__close">
       <use xlink:href="assets/images/sprite.svg#modal-close"></use>
     </svg>
     <form action="" method="post" class="about__form">
@@ -318,8 +323,8 @@ title: Home
       <button class="btn btn-line">Отправить</button>
     </form>
   </div>
-  <div class="modal-template about__map-popup">
-    <svg class="modal-close">
+  <div class="modal about__map-popup">
+    <svg class="modal__close">
       <use xlink:href="assets/images/sprite.svg#modal-close"></use>
     </svg>
     <iframe

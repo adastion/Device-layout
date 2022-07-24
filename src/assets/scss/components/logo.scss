@@ -14,5 +14,15 @@
     &:active {
       opacity: 0.3;
     }
+
+    &--hidden {
+      &:hover,
+      &:active,
+      &:focus {
+        opacity: 1;
+      }
+
+      cursor: default;
+    }
   }
 }

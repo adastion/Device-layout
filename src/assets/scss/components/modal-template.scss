@@ -1,4 +1,4 @@
-.modal-template {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,4 +9,33 @@
   height: 100%;
   box-shadow: 0 15px 20px (rgba($black, 0.2));
   z-index: 10;
+  display: none;
+
+  &__close {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    fill: $saffron;
+    opacity: 0.5;
+    cursor: pointer;
+
+    @include tablet-and-bigger {
+      top: 16px;
+      right: 22px;
+      width: 55px;
+      height: 55px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
 }

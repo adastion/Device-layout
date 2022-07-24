@@ -1,8 +1,10 @@
 <div class="all-content header">
   <div class="header__logo">
-    <svg class="logo" xmlns="http://www.w3.org/2000/svg">
-      <use xlink:href="assets/images/sprite.svg#logo"></use>
-    </svg>
+    <a href="{{linkHome}}" class="logo__link {{hiddenEfect}}">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="assets/images/sprite.svg#logo"></use>
+      </svg>
+    </a>
   </div>
   <nav>
     <ul class="parts-nav header__navigation">
@@ -17,7 +19,9 @@
         </form>
       </li>
       <li class="parts-nav__item">
-        <a href="#" class="btn parts-nav__link">Войти</a>
+        <span class="parts-nav__authorizetion {{visibleUser}}">Владислав Черняк</span>
+        <a href="#" class="btn parts-nav__link {{hiddenExit}}">Выйти</a>
+        <a href="#" class="btn parts-nav__link {{hiddenLogin}}">Войти</a>
         <svg class="parts-nav__icon header__svg-icon">
           <use xlink:href="assets/images/sprite.svg#user"></use>
         </svg>
@@ -43,7 +47,7 @@
           <use xlink:href="assets/images/sprite.svg#plus"></use>
         </svg>
       </label>
-      <ul class="header__submenu">
+      <ul class="header__submenu {{headerSubmenu}}">
         <li class="header__subitem">
           <a href="#" class="btn header__link-submenu">Виртуальная реальность</a>
           <a href="cotalog.html" class="btn header__link-submenu">Моноподы для селфи</a>

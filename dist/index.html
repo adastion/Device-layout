@@ -15,9 +15,11 @@
         <input id="cb" type="checkbox" class="visually-hidden">
         <header class="all-content"><div class="all-content header">
   <div class="header__logo">
-    <svg class="logo" xmlns="http://www.w3.org/2000/svg">
-      <use xlink:href="assets/images/sprite.svg#logo"></use>
-    </svg>
+    <a href="\#" class="logo__link logo__link--hidden">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="assets/images/sprite.svg#logo"></use>
+      </svg>
+    </a>
   </div>
   <nav>
     <ul class="parts-nav header__navigation">
@@ -32,7 +34,9 @@
         </form>
       </li>
       <li class="parts-nav__item">
-        <a href="#" class="btn parts-nav__link">Войти</a>
+        <span class="parts-nav__authorizetion ">Владислав Черняк</span>
+        <a href="#" class="btn parts-nav__link parts-nav__link--hidden parts-nav__link--authorized">Выйти</a>
+        <a href="#" class="btn parts-nav__link ">Войти</a>
         <svg class="parts-nav__icon header__svg-icon">
           <use xlink:href="assets/images/sprite.svg#user"></use>
         </svg>
@@ -58,7 +62,7 @@
           <use xlink:href="assets/images/sprite.svg#plus"></use>
         </svg>
       </label>
-      <ul class="header__submenu">
+      <ul class="header__submenu header__submenu--page-home">
         <li class="header__subitem">
           <a href="#" class="btn header__link-submenu">Виртуальная реальность</a>
           <a href="cotalog.html" class="btn header__link-submenu">Моноподы для селфи</a>
@@ -373,8 +377,8 @@
     <div class="about__mini-map"></div>
     <button class="btn-line about__btn">Напишите нам</button>
   </div>
-  <div class="modal-template about__modal-write">
-    <svg class="modal-close">
+  <div class="modal about__modal-write">
+    <svg class="modal__close">
       <use xlink:href="assets/images/sprite.svg#modal-close"></use>
     </svg>
     <form action="" method="post" class="about__form">
@@ -394,8 +398,8 @@
       <button class="btn btn-line">Отправить</button>
     </form>
   </div>
-  <div class="modal-template about__map-popup">
-    <svg class="modal-close">
+  <div class="modal about__map-popup">
+    <svg class="modal__close">
       <use xlink:href="assets/images/sprite.svg#modal-close"></use>
     </svg>
     <iframe
@@ -407,7 +411,7 @@
         <footer><div class="all-content footer">
   <div class="footer__block">
     <div class="footer__logo">
-      <a href="#" class="logo__link">
+      <a href="\#" class="logo__link logo__link--hidden">
         <svg class="logo logo--footer">
           <use xlink:href="assets/images/sprite.svg#logo"></use>
         </svg>
