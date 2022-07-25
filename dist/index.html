@@ -374,37 +374,41 @@
       <p class="about__text">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить
         работоспособность покупки. Всякое бывает.</p>
     </div>
-    <div class="about__mini-map"></div>
-    <button class="btn-line about__btn">Напишите нам</button>
+    <div class="about__mini-map" data-modal="map"></div>
+    <button class="btn-line about__btn" data-modal="write">Напишите нам</button>
   </div>
-  <div class="modal about__modal-write">
-    <svg class="modal__close">
-      <use xlink:href="assets/images/sprite.svg#modal-close"></use>
-    </svg>
-    <form action="" method="post" class="about__form">
-      <ul class="about__wrap-inputs">
-        <li>
-          <label for="name">Ваше имя:</label>
-          <input id="name" type="text" class="input input--bg about__input" placeholder="Имя Фамилия">
-        </li>
-        <li>
-          <label for="email">Ваш e-mail:</label>
-          <input id="email" type="email" class="input input--bg about__input" placeholder="email@example.com">
-        </li>
-      </ul>
-      <label for="text">Текст письма:</label>
-      <textarea id="text" class="input input--bg input--textarea about__input"
-        placeholder="В свободной форме"></textarea>
-      <button class="btn btn-line">Отправить</button>
-    </form>
+  <div class="modal" id="write">
+    <div class="modal__wrap about__modal-write">
+      <svg class="modal__close">
+        <use xlink:href="assets/images/sprite.svg#modal-close"></use>
+      </svg>
+      <form action="" method="post" class="about__form">
+        <ul class="about__wrap-inputs">
+          <li>
+            <label for="name">Ваше имя:</label>
+            <input id="name" type="text" class="input input--bg about__input" placeholder="Имя Фамилия">
+          </li>
+          <li>
+            <label for="email">Ваш e-mail:</label>
+            <input id="email" type="email" class="input input--bg about__input" placeholder="email@example.com">
+          </li>
+        </ul>
+        <label for="text">Текст письма:</label>
+        <textarea id="text" class="input input--bg input--textarea about__input"
+          placeholder="В свободной форме"></textarea>
+        <button class="btn btn-line">Отправить</button>
+      </form>
+    </div>
   </div>
-  <div class="modal about__map-popup">
-    <svg class="modal__close">
-      <use xlink:href="assets/images/sprite.svg#modal-close"></use>
-    </svg>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.112548877997!2d37.52742931589823!3d55.68703098053582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsINCg0L7RgdGB0LjRjywgMTE5MzEx!5e0!3m2!1sru!2sby!4v1658607829750!5m2!1sru!2sby"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="modal about__map-popup" id="map">
+    <div class="modal__wrap">
+      <svg class="modal__close">
+        <use xlink:href="assets/images/sprite.svg#modal-close"></use>
+      </svg>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.112548877997!2d37.52742931589823!3d55.68703098053582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsINCg0L7RgdGB0LjRjywgMTE5MzEx!5e0!3m2!1sru!2sby!4v1658607829750!5m2!1sru!2sby"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </div>
 </section>
 </main>

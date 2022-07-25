@@ -24,7 +24,8 @@ linkHome: index.html
     <form action="src/" method="post" class="filter__form-wrap">
       <div class="filter__block">
         <h3 class="filter__subtitle">Стоимость</h3>
-        <input type="range" class="filter__range-slider">
+        <!-- <input type="range" class="filter__range-slider"> -->
+        {{>slider-range}}
         <div class="filter__price-wrap">
           <input type="number" placeholder="от 0">
           <input type="number" placeholder="до 5000">

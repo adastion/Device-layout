@@ -199,6 +199,80 @@ h1 {
   color: rgba(0, 0, 0, 0.3);
 }
 
+.range {
+  position: relative;
+  width: 95vmin;
+  background: #ffffff;
+  padding: 50px 40px 20px;
+  z-index: 200;
+}
+.range__container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-top: 30px;
+}
+.range__container input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: none;
+}
+.range__container input::-webkit-slider-runnable-track, .range__container input::-moz-range-track, .range__container input::-ms-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+}
+.range__container input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.7em;
+  width: 1.7em;
+  background: url("../images/svg/slider-button.svg") no-repeat;
+  cursor: pointer;
+  border-radius: 10px;
+  pointer-events: auto;
+  margin-top: 4px;
+}
+.range__container input::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 1.7em;
+  width: 1.7em;
+  cursor: pointer;
+  border-radius: 50%;
+  background: url("../images/svg/slider-button.svg") no-repeat;
+  pointer-events: auto;
+}
+.range__container input::-ms-thumb {
+  appearance: none;
+  height: 1.7em;
+  width: 1.7em;
+  cursor: pointer;
+  border-radius: 50%;
+  background: url("../images/svg/slider-button.svg") no-repeat;
+  pointer-events: auto;
+}
+.range__container input:active::-webkit-slider-thumb {
+  background: url("../images/svg/slider-button-empty.svg") no-repeat;
+  border-radius: 50%;
+}
+.range__track {
+  width: 100%;
+  height: 5px;
+  background: #91c92f;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+
 .input {
   border: none;
   outline: none;
@@ -294,13 +368,22 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 50;
+}
+.modal__wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 960px;
   width: 100%;
   max-height: 560px;
   height: 100%;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  display: none;
+  position: relative;
 }
 .modal__close {
   content: "";
@@ -327,6 +410,9 @@ h1 {
 }
 .modal__close:active {
   opacity: 0.3;
+}
+.modal--active {
+  display: block;
 }
 
 .header {
