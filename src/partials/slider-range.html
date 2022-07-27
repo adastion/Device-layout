@@ -1,7 +1,13 @@
 <div class="range">
   <div class="range__container">
     <div class="range__track"></div>
-    <input type="range" min="1" max="100" value="30" id="slider_1">
-    <input type="range" min="1" max="100" value="70" id="slider_2">
+    <input type="range" min="0" max="5000" value="100" id="slider_1" oninput="slOne()">
+    <input type="range" min="0" max="5000" value="3700" id="slider_2" >
+  </div>
+  <div class="range__price-wrap">
+    <label for="outValue_1">От</label>
+    <input id="outValue_1" type="text" value="0">
+    <label for="outValue_2">До</label>
+    <input id="outValue_2" type="text" value="5000">
   </div>
 </div>

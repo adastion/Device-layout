@@ -10,6 +10,12 @@
   font-family: "OpenSans", sans-serif;
 }
 
+@mixin sort-pading-desktop-and-bigger {
+  @media (min-width: 1250px) {
+    @content;
+  }
+}
+
 @mixin services-desktop-and-bigger {
   @media (min-width: 1185px) {
     @content;

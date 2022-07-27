@@ -1,15 +1,8 @@
 .range {
-  position: relative;
-  width: 95vmin;
-  background: $white;
-  padding: 50px 40px 20px;
-  z-index: 200;
-
   &__container {
     position: relative;
-    width: 100%;
-    height: 100px;
-    margin-top: 30px;
+    height: 25px;
+    display: block;
 
     & input {
       -webkit-appearance: none;
@@ -23,12 +16,13 @@
       bottom: 0;
       background: transparent;
       pointer-events: none;
+      z-index: 40;
 
       &::-webkit-slider-runnable-track,
       &::-moz-range-track,
       &::-ms-track {
         -webkit-appearance: none;
-        appearance: none; 
+        appearance: none;
         height: 5px;
       }
 
@@ -36,48 +30,76 @@
         -webkit-appearance: none;
         height: 1.7em;
         width: 1.7em;
-        background: url('../images/svg/slider-button.svg') no-repeat;
+        background: url('../images/svg/filter-button.svg') no-repeat;
         cursor: pointer;
         border-radius: 10px;
         pointer-events: auto;
-        margin-top: 4px;
+        margin-top: 6px;
       }
-      
+
       &::-moz-range-thumb {
         -webkit-appearance: none;
         height: 1.7em;
         width: 1.7em;
         cursor: pointer;
         border-radius: 50%;
-        background: url('../images/svg/slider-button.svg') no-repeat;
+        background: url('../images/svg/filter-button.svg') no-repeat;
         pointer-events: auto;
       }
-      
+
       &::-ms-thumb {
         appearance: none;
         height: 1.7em;
         width: 1.7em;
         cursor: pointer;
         border-radius: 50%;
-        background: url('../images/svg/slider-button.svg') no-repeat;
+        background: url('../images/svg/filter-button.svg') no-repeat;
         pointer-events: auto;
       }
-      
+
       &:active::-webkit-slider-thumb {
-        background: url('../images/svg/slider-button-empty.svg') no-repeat;
-        border-radius: 50%;
+        background: url('../images/svg/filter-button.svg') no-repeat;
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
       }
     }
   }
 
   &__track {
     width: 100%;
-    height: 5px;
-    background: $atlantis;
+    height: 2px;
+    background: $alto_range;
     margin: auto;
     position: absolute;
     top: 0;
     bottom: 0;
     border-radius: 5px;
+  }
+
+  &__price-wrap {
+    display: flex;
+    justify-content: space-between;
+    @include primary-copy-font;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.5;
+    margin-bottom: 15px;
+
+    & p {
+      display: flex;
+    }
+
+    & input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: none;
+      margin-left: 5px;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
   }
 }

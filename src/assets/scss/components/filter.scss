@@ -47,32 +47,6 @@
     width: 100%;
   }
 
-  &__price-wrap {
-    display: flex;
-    justify-content: space-between;
-    @include primary-copy-font;
-    font-size: 14px;
-    font-weight: 300;
-    opacity: 0.5;
-    
-    & p {
-      display: flex;
-    }
-
-    & input {
-      width: 100%;
-      border: none;
-      outline: none;
-      background: none;
-      margin-left: 5px;
-
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        display: none;
-      }
-    }
-  }
-
   &__item {
     display: flex;
     align-items: center;

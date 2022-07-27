@@ -1,7 +1,7 @@
 ---
 layouts: default
 title: Cotalog
-hiddenLogin: parts-nav__link--hidden parts-nav__link--authorized 
+hiddenLogin: parts-nav__link--hidden parts-nav__link--authorized
 hiddenExit: parts-nav__link--authorized
 visibleUser: parts-nav__authorizetion--active
 linkHome: index.html
@@ -24,12 +24,7 @@ linkHome: index.html
     <form action="src/" method="post" class="filter__form-wrap">
       <div class="filter__block">
         <h3 class="filter__subtitle">Стоимость</h3>
-        <!-- <input type="range" class="filter__range-slider"> -->
         {{>slider-range}}
-        <div class="filter__price-wrap">
-          <input type="number" placeholder="от 0">
-          <input type="number" placeholder="до 5000">
-        </div>
       </div>
       <div class="filter__block">
         <h3 class="filter__subtitle">Цвет</h3>
