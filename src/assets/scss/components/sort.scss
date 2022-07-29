@@ -10,16 +10,16 @@
   @include tablet-and-bigger {
     padding: 8px 15px 8px 75px;
   }
-  
+
   @include big-desktop-and-bigger {
     flex-direction: row;
     align-items: center;
   }
-  
+
   @include sort-pading-desktop-and-bigger {
     padding: 8px 140px 8px 75px;
   }
-  
+
   &__title {
     margin-right: 50px;
     margin-bottom: 10px;

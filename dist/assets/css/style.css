@@ -1500,7 +1500,7 @@ h1 {
 }
 @media (min-width: 768px) {
   .sort {
-    padding: 8px 140px 8px 75px;
+    padding: 8px 15px 8px 75px;
   }
 }
 @media (min-width: 1160px) {
@@ -1509,6 +1509,11 @@ h1 {
         flex-direction: row;
     -ms-flex-align: center;
         align-items: center;
+  }
+}
+@media (min-width: 1250px) {
+  .sort {
+    padding: 8px 140px 8px 75px;
   }
 }
 .sort__title {

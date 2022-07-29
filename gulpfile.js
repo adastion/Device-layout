@@ -51,10 +51,7 @@ const path = {
     clean: "./" + distPath
 }
 
-
-
 /* Tasks */
-
 function serve() {
     browserSync.init({
         server: {

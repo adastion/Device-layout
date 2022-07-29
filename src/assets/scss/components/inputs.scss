@@ -2,7 +2,7 @@
   border: none;
   outline: none;
   background: none;
-  
+
   &--bg {
     background: $gallery;
     padding: 20px;
@@ -17,7 +17,7 @@
     }
 
     &:hover {
-        background: darken($gallery, 3%);
+      background: darken($gallery, 3%);
     }
 
     &:focus {
@@ -28,7 +28,7 @@
     &:valid {
       background: $gallery;
     }
-    
+
     &:invalid:required {
       background: $we_peep;
     }
@@ -39,4 +39,3 @@
     resize: none;
   }
 }
-

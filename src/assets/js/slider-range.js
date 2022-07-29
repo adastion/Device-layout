@@ -1,31 +1,40 @@
-window.onload = function () {
+window.onload = () => {
   slOne();
   slTwo();
 };
 
- sliderOne = document.getElementById('slider_1');
- sliderTwo = document.getElementById('slider_2');
- displayValOne = document.getElementById('outValue_1');
- displayValTwo = document.getElementById('outValue_2');
- minGap = 0;
- sliderTrack = document.querySelector('.range__track');
- sliderMaxValue = document.getElementById('slider_1').max;
+let sliderOne = document.getElementById('slider_1');
+let sliderTwo = document.getElementById('slider_2');
+let displayValOne = document.getElementById('outValue_1');
+let displayValTwo = document.getElementById('outValue_2');
+let minGap = 5;
+let sliderTrack = document.querySelector('.range__track');
+let sliderMaxValue = document.getElementById('slider_1').max;
 
-function slOne() {
+sliderOne.addEventListener('input', () => {
+  slOne();
+})
+
+sliderTwo.addEventListener('input', () => {
+  slTwo();
+});
+
+const slOne = () => {
   if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
     sliderOne.value = parseInt(sliderTwo.value) - minGap;
   }
-  displayValOne.textContent = sliderOne.value;
+  displayValOne.value = sliderOne.value;
   fillColor();
 }
-function slTwo() {
+
+const slTwo = () => {
   if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
     sliderTwo.value = parseInt(sliderOne.value) + minGap;
   }
-  displayValTwo.textContent = sliderTwo.value;
+  displayValTwo.value = sliderTwo.value;
   fillColor();
 }
-function fillColor() {
+const fillColor = () => {
   percent1 = (sliderOne.value / sliderMaxValue) * 100;
   percent2 = (sliderTwo.value / sliderMaxValue) * 100;
   sliderTrack.style.background = `linear-gradient(to right, #dbdbdb ${percent1}% , #91c92f ${percent1}% , #91c92f ${percent2}%, #dbdbdb ${percent2}%)`;

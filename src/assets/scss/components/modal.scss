@@ -7,7 +7,7 @@
   height: 100%;
   display: none;
   z-index: 50;
-  
+
   &__wrap {
     position: absolute;
     top: 50%;
@@ -19,7 +19,6 @@
     height: 100%;
     box-shadow: 0 15px 20px (rgba($black, 0.2));
     position: relative;
-    
   }
 
   &__close {
@@ -53,5 +52,4 @@
   &--active {
     display: block;
   }
-
 }

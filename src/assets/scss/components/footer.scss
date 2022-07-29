@@ -15,11 +15,10 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 10px 20px;
-    
-    
+
     &:not(:last-child) {
       margin-bottom: 20px;
-      
+
       @include tablet-and-bigger {
         margin-bottom: 30px;
       }
@@ -34,7 +33,7 @@
         flex-wrap: wrap;
       }
     }
-    
+
     &:last-child {
       flex-direction: row;
     }
