@@ -1450,11 +1450,12 @@ h1 {
   gap: 40px;
 }
 .products__card {
-  display: block;
   max-width: 360px;
   aspect-ratio: 1/1.056;
   margin-bottom: 32px;
   background: #e5e5e5;
+  cursor: pointer;
+  transition: all 0.3s;
   position: relative;
 }
 .products__card:before {

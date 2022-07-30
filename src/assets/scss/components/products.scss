@@ -9,11 +9,12 @@
   }
 
   &__card {
-    display: block;
     max-width: 360px;
     aspect-ratio: 1/1.056;
     margin-bottom: 32px;
     background: $mercury;
+    cursor: pointer;
+    transition: all 0.3s;
     position: relative;
 
     &:before {
